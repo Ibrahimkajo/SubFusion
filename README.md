@@ -67,17 +67,19 @@ The script writes one RGB fused PNG per paired input image.
 
 ### One-image smoke test
 
-The release includes a licence-free synthetic paired input at
-`examples/demo_input/synthetic_street.png`, so reviewers can test inference
-without obtaining a dataset:
+The release includes one paired LLVIP input at
+`examples/demo_input/llvip_010001.jpg`, so reviewers can test inference
+immediately after downloading the checkpoint:
 
 ```bash
 python scripts/infer.py --input-dir examples/demo_input --output-dir outputs/demo
 ```
 
-This writes `outputs/demo/synthetic_street.png`.  The image is synthetic and
-is intended only to verify installation, paired-image I/O, checkpoint loading,
-and fusion execution; it is not used for a quantitative claim.
+This writes `outputs/demo/llvip_010001.png`.  The example is included only to
+verify installation, paired-image I/O, checkpoint loading, and fusion
+execution; it is not used for a quantitative claim.  It remains subject to the
+official LLVIP non-commercial terms and required citation; see
+`examples/README.md`.
 
 ## Evaluation
 
