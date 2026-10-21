@@ -1,0 +1,21 @@
+# Exact training profile of weights/subfusion_msrs_full_rank1_70e.pth
+seed: 20260923
+epochs: 70
+batch_size: 4
+num_workers: 0
+load_size: 480
+crop_size: 480
+horizontal_flip: true
+learning_rate: 0.0001
+beta1: 0.5
+loss:
+  lambda_l1: 100.0
+  visible_l1: 1.0
+  infrared_l1: 1.0
+  residual: 2.0
+  structure: 1.0
+  colour: 1.0
+  rank: 1
+  salient_fraction: 0.10
+  visible_structure_weight: 0.5
+  infrared_structure_weight: 0.5

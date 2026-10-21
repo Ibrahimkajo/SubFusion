@@ -1,0 +1,15 @@
+{
+  "images_checked": [
+    "190006.jpg",
+    "190011.jpg",
+    "190020.jpg",
+    "190027.jpg",
+    "190032.jpg",
+    "190033.jpg",
+    "190553.jpg",
+    "190556.jpg"
+  ],
+  "max_absolute_uint8_difference": 0,
+  "mean_absolute_uint8_difference": 0.0,
+  "pass": true
+}
