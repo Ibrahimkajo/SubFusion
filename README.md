@@ -18,8 +18,7 @@ The implementation contains one fusion network only.  Visible RGB and infrared i
 | Random seed | 20260923 |
 | SHA-256 | `A2C5BE010AADB4F1E496515252C201B1F46B051D6B87006C9F2B327A2A62DAD7` |
 
-The checkpoint file is 146 MB.  GitHub rejects ordinary files larger than 100 MB, so publish this file as a GitHub Release asset (recommended) or through Git LFS.  The local reviewer bundle deliberately contains the original binary for direct use.
-
+The checkpoint file is 146 MB.  GitHub rejects ordinary files larger than 100 MB, so it is published as a GitHub Release asset.
 ## Full loss used for this checkpoint
 
 All image tensors are normalized to `[-1, 1]`.  The final MSRS checkpoint uses
