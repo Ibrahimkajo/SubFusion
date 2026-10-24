@@ -1,12 +1,10 @@
 # Checkpoint
 
-The reviewer bundle contains `subfusion_msrs_full_rank1_70e.pth`.
+This bundle contains `subfusion_msrs_full_rank1_70e.pth`.
 
 * Size: 145,868,965 bytes
 * SHA-256: `A2C5BE010AADB4F1E496515252C201B1F46B051D6B87006C9F2B327A2A62DAD7`
 * Training: MSRS, 1,083 paired images, 70 epochs, final full-loss profile.
-
-For GitHub, publish this checkpoint as a release asset rather than a normal Git blob.  It is intentionally ignored by `.gitignore` to avoid GitHub's 100 MB ordinary-file limit.
 
 ## Running a clone from GitHub
 
