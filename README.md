@@ -1,4 +1,4 @@
-# SubFusion: a two-input U-Net for visible–infrared image fusion
+# SubFusion: a subspace based U-Net for visible–infrared image fusion
 
 This repository is a self-contained reviewer release of the SubFusion fusion network.  It contains a two-input U-Net, direct image-domain and subspace losses, reproducible inference/evaluation scripts, and the final MSRS-trained checkpoint.
 
