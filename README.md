@@ -107,9 +107,8 @@ Training produces a generator checkpoint and a CSV loss log.  GPU execution is r
 * `scripts/` — training, inference, and evaluation.
 * `configs/` — final MSRS configuration.
 * `weights/` — final MSRS checkpoint and checksum information.
-* `results/` — compact, aggregate result tables only.
 
-Raw datasets, labels, unrelated experiment queues, intermediate checkpoints, and manuscript/reviewer material are intentionally excluded.
+Raw datasets, labels, unrelated experiment queues, and intermediate checkpoints.
 
 ## Before a public release
 
