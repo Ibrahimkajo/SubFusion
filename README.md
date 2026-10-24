@@ -27,8 +27,7 @@ All image tensors are normalized to `[-1, 1]`.  The final MSRS checkpoint uses
 \mathcal{L}=100\mathcal{L}_{A}+100\mathcal{L}_{B}+2\mathcal{L}_{R}+\mathcal{L}_{S}+\mathcal{L}_{C}.
 \]
 
-`L_A` and `L_B` are RGB L1 terms with visible and replicated-RGB infrared sources, respectively.  `L_R` is the historical complete per-RGB rank-1 residual target, included to reproduce the released checkpoint exactly.  `L_C` preserves visible chromatic components.  `L_S` compares the complete singular-vector geometry map \(Q=UV^T\) at the top 10% of source-geometry locations.  The code labels the component as a **detail residual**, not a sparse component.
-
+`L_A` and `L_B` are RGB L1 terms with visible and replicated-RGB infrared sources, respectively.  `L_R` is the complete per-RGB rank-1 residual target, included to reproduce the released checkpoint exactly.  `L_C` preserves visible chromatic components.  `L_S` compares the complete singular-vector geometry map \(Q=UV^T\) at the top 10% of source-geometry locations.
 The exact configuration is in `configs/msrs_full_rank1_70e.yaml`.
 
 ## Installation
@@ -88,7 +87,7 @@ python scripts/evaluate.py \
   --output-dir outputs/evaluation
 ```
 
-This creates fused images, per-image values, and `summary_metrics.csv`.  The repository includes the original MSRS test-set summaries in `results/` as a numerical reference.  The project metrics include EN, SF, AG, MI, CC, SCD, Qabf, VIF, Qy, SSIM, MS-SSIM, FMI_w, and DeltaE00.  The public IVIF-ZOO implementation remains an external dependency and is documented separately in the paper evaluation protocol.
+This creates fused images, per-image values, and `summary_metrics.csv`.  The project metrics include EN, SF, AG, MI, CC, SCD, Qabf, VIF, Qy, SSIM, MS-SSIM, FMI_w, and DeltaE00.  The public IVIF-ZOO implementation remains an external dependency and is documented separately in the paper evaluation protocol.
 
 ## Training
 
@@ -101,21 +100,11 @@ python scripts/train.py \
 
 Training produces a generator checkpoint and a CSV loss log.  GPU execution is recommended because the structure term calculates batched SVDs.
 
-## Reproduction verification
-
-The following check compares this standalone U-Net output against an earlier export generated with the same checkpoint.  It reports a maximum and mean unsigned 8-bit difference; an exact match has `max_absolute_uint8_difference: 0`.
-
-```bash
-python scripts/verify_reproduction.py \
-  --input-dir /path/to/paired_test_images \
-  --reference-dir /path/to/previously_exported_fused_pngs \
-  --limit 8
-```
 
 ## Repository contents
 
 * `subfusion/` — U-Net architecture, SVD components, losses, paired-image I/O, and project metrics.
-* `scripts/` — training, inference, evaluation, and byte-level reproduction verification.
+* `scripts/` — training, inference, and evaluation.
 * `configs/` — final MSRS configuration.
 * `weights/` — final MSRS checkpoint and checksum information.
 * `results/` — compact, aggregate result tables only.
